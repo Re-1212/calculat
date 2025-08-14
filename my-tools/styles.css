@@ -1,0 +1,55 @@
+:root{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --primary:#0d6efd; /* أزرق احترافي */
+  --accent:#198754;  /* أخضر خفيف */
+  --text:#0f172a;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+}
+.container{max-width:980px;margin:0 auto;padding:18px}
+.site-header{
+  background:var(--card);
+  border-bottom:1px solid #e6eef7;
+  padding:18px 0;
+}
+.site-header h1{margin:0;color:var(--primary)}
+.tagline{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+.main-nav{display:flex;gap:8px;padding:12px 0;flex-wrap:wrap}
+.tab-btn{
+  background:transparent;border:1px solid transparent;padding:8px 12px;border-radius:8px;
+  cursor:pointer;font-weight:600;color:var(--primary)
+}
+.tab-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+.section-card{
+  background:var(--card);
+  margin:16px 0;
+  padding:18px;border-radius:10px;
+  box-shadow:0 6px 18px rgba(12,52,90,0.06);
+}
+input[type="date"], input[type="number"], select {
+  width:100%;padding:10px;margin:8px 0;border:1px solid #e2e8f0;border-radius:8px;
+}
+button{padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;cursor:pointer}
+button:active{transform:translateY(1px)}
+
+.ad-space{
+  background:#f1f5f9;border:1px dashed #cbd5e1;padding:12px;border-radius:8px;color:var(--muted);
+  text-align:center;margin:12px 0;
+}
+
+/* small screens */
+@media (max-width:600px){
+  .main-nav{justify-content:center}
+}
+.result{margin-top:10px;font-weight:700}
+.note{color:var(--muted);font-size:13px}
