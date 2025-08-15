@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
@@ -7,8 +8,8 @@
     :root{
       --bg:#f8fafc;
       --card:#ffffff;
-      --primary:#0d6efd;
-      --accent:#198754;
+      --primary:#0d6efd; /* أزرق احترافي */
+      --accent:#198754;  /* أخضر للتأكيد */
       --text:#0f172a;
       --muted:#6b7280;
       --border:#e2e8f0;
@@ -16,26 +17,48 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:"Segoe UI", Tahoma, Arial, sans-serif;background:var(--bg);color:var(--text)}
     .container{max-width:1024px;margin:0 auto;padding:16px}
-    header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;}
+    header{
+      background:var(--card);border-bottom:1px solid var(--border);
+      position:sticky;top:0;z-index:10;
+    }
     .head-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
     h1{margin:0;color:var(--primary);font-size:22px}
     .tagline{color:var(--muted);font-size:13px;margin:2px 0 0}
-    .nav{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0;}
-    .tab{background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600;}
+    .nav{
+      display:flex;gap:8px;flex-wrap:wrap;padding:12px 0;
+    }
+    .tab{
+      background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;
+      padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600;
+    }
     .tab.active{background:var(--primary);border-color:var(--primary);color:#fff}
-    .ad{background:#f1f5f9;border:2px dashed #cbd5e1;color:#64748b;text-align:center;padding:14px;border-radius:12px;margin:12px 0;font-size:14px;}
+    .ad{
+      background:#f1f5f9;border:2px dashed #cbd5e1;color:#64748b;
+      text-align:center;padding:14px;border-radius:12px;margin:12px 0;font-size:14px;
+    }
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media (max-width:800px){ .grid{grid-template-columns:1fr} }
-    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(12,52,90,0.06);}
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:14px;
+      padding:18px;box-shadow:0 6px 20px rgba(12,52,90,0.06);
+    }
     h2{margin-top:0;font-size:18px}
     label{display:block;margin:8px 0 6px;font-weight:600}
-    input, select{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;background:#fff;}
+    input, select{
+      width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;background:#fff;
+    }
     .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
-    button{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700;}
+    button{
+      background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 14px;
+      cursor:pointer;font-weight:700;
+    }
     button.secondary{background:#0d6efd}
     button:active{transform:translateY(1px)}
-    .result{margin-top:10px;background:#f8fafc;border:1px solid var(--border);padding:10px;border-radius:10px;font-weight:700;min-height:42px;display:flex;align-items:center}
+    .result{
+      margin-top:10px;background:#f8fafc;border:1px solid var(--border);
+      padding:10px;border-radius:10px;font-weight:700;min-height:42px;display:flex;align-items:center
+    }
     .note{color:var(--muted);font-size:12px;margin-top:6px}
     .loading{opacity:.7}
     footer{color:var(--muted);font-size:12px;text-align:center;padding:24px 0}
@@ -48,14 +71,20 @@
     <div class="container head-wrap">
       <div>
         <h1>أدواتي الاحترافية</h1>
-        <p class="tagline">حاسبة العمر بالميلادي والهجري • محول التاريخ • محول العملات</p>
+        <p class="tagline">حاسبة العمر • محول التاريخ (ميلادي ↔ هجري) • محول العملات</p>
       </div>
     </div>
   </header>
 
   <main class="container">
+    <!-- 🔹 إعلان علوي: عند الموافقة من AdSense استبدلي هذا الـ div بكودك -->
     <div class="ad" id="ad-top">
       مكان إعلان علوي — ضعي كود AdSense هنا بعد نشر الموقع
+      <!-- مثال (ضعيه بعد الموافقة):
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
     </div>
 
     <nav class="nav" role="tablist" aria-label="التبويب">
@@ -64,7 +93,6 @@
       <button class="tab" data-target="fx">محول العملات</button>
     </nav>
 
-    <!-- ====== حاسبة العمر بالميلادي والهجري ====== -->
     <section id="age" class="card tool">
       <h2>حاسبة العمر</h2>
       <label for="birth">تاريخ الميلاد</label>
@@ -74,10 +102,10 @@
         <button class="secondary" id="clearAge">مسح</button>
       </div>
       <div id="ageOut" class="result" aria-live="polite"></div>
-      <p class="note">يتم الحساب بدقة حسب التقويم الميلادي والهجري.</p>
+      <p class="note">يتم الحساب بدقة (سنوات، أشهر، أيام) حسب تقويم الميلادي.</p>
+	  
     </section>
 
-    <!-- ====== محول التاريخ ====== -->
     <section id="hijri" class="card tool" hidden>
       <h2>محول التاريخ (ميلادي ↔ هجري)</h2>
       <div class="grid">
@@ -105,7 +133,6 @@
       <p class="note">التحويل يستخدم واجهة برمجية موثوقة للحصول على دقة عالية.</p>
     </section>
 
-    <!-- ====== محول العملات ====== -->
     <section id="fx" class="card tool" hidden>
       <h2>محول العملات (أسعار حية)</h2>
       <div class="row">
@@ -145,6 +172,7 @@
       <p class="note">يتم جلب الأسعار عبر خدمة مجانية موثوقة (بدون مفتاح API).</p>
     </section>
 
+    <!-- 🔹 إعلان سفلي -->
     <div class="ad" id="ad-bottom">
       مكان إعلان سفلي — ضعي كود AdSense هنا بعد النشر
     </div>
@@ -161,27 +189,54 @@
         document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
         const target = btn.dataset.target;
-        document.querySelectorAll('.tool').forEach(sec=> sec.hidden = sec.id !== target);
+        document.querySelectorAll('.tool').forEach(sec=>{
+          sec.hidden = sec.id !== target;
+        });
       });
     });
 
-    // ====== حاسبة العمر بالميلادي والهجري ======
+    // ====== 1) حاسبة العمر ======
     const birthEl = document.getElementById('birth');
     const ageOut = document.getElementById('ageOut');
 
     function calcAgeParts(birth, today=new Date()){
+      // يحسب سنوات/أشهر/أيام بدقة
       let y = today.getFullYear() - birth.getFullYear();
       let m = today.getMonth() - birth.getMonth();
       let d = today.getDate() - birth.getDate();
-      if (d < 0){
+
+      if (d < 0) {
+        // خذ عدد أيام الشهر السابق
         const prevMonthDays = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-        d += prevMonthDays; m -= 1;
+        d += prevMonthDays;
+        m -= 1;
       }
-      if (m < 0){ m += 12; y -=1; }
-      return {y,m,d};
+      if (m < 0) {
+        m += 12;
+        y -= 1;
+      }
+      return {y, m, d};
     }
 
+    document.getElementById('calcAge').addEventListener('click', ()=>{
+      const v = birthEl.value;
+      if(!v){ ageOut.innerHTML = '<span class="error">رجاءً اختر تاريخ الميلاد.</span>'; return; }
+      const b = new Date(v);
+      const {y,m,d} = calcAgeParts(b);
+      ageOut.innerHTML = `<span class="success">عمرك: ${y} سنة و ${m} شهر و ${d} يوم</span>`;
+    });
+
+    document.getElementById('clearAge').addEventListener('click', ()=>{
+      birthEl.value = '';
+      ageOut.textContent = '';
+    });
+
+    // ====== 2) محول التاريخ (API aladhan.com) ======
+    const toHijriOut = document.getElementById('toHijriOut');
+    const toGregOut = document.getElementById('toGregOut');
+
     async function gToH(dateStr){
+      // dateStr بصيغة YYYY-MM-DD
       const url = `https://api.aladhan.com/v1/gToH?date=${dateStr}`;
       const res = await fetch(url);
       if(!res.ok) throw new Error('فشل الاتصال');
@@ -191,42 +246,15 @@
       return { day:h.day, month:h.month.number, year:h.year, weekday:h.weekday.ar };
     }
 
-    document.getElementById('calcAge').addEventListener('click', async ()=>{
-      const v = birthEl.value;
-      if(!v){ ageOut.innerHTML = '<span class="error">رجاءً اختر تاريخ الميلاد.</span>'; return; }
-
-      // العمر الميلادي
-      const b = new Date(v);
-      const {y,m,d} = calcAgeParts(b);
-      let text = `<span class="success">العمر الميلادي: ${y} سنة و ${m} شهر و ${d} يوم</span>`;
-
-      // العمر الهجري
-      try{
-        ageOut.textContent = '... جاري التحويل للهجري';
-        ageOut.classList.add('loading');
-        const h = await gToH(v);
-        ageOut.classList.remove('loading');
-
-        // تقريبي لحساب العمر الهجري
-        const birthHijri = new Date(h.year, h.month-1, h.day);
-        const {y:mHy, m:mHm, d:mHd} = calcAgeParts(birthHijri);
-        text += `<br><span class="success">العمر الهجري: ${mHy} سنة و ${mHm} شهر و ${mHd} يوم</span>`;
-        ageOut.innerHTML = text;
-
-      }catch(e){
-        ageOut.classList.remove('loading');
-        ageOut.innerHTML += `<br><span class="error">تعذر حساب العمر الهجري.</span>`;
-      }
-    });
-
-    document.getElementById('clearAge').addEventListener('click', ()=>{
-      birthEl.value = '';
-      ageOut.textContent = '';
-    });
-
-    // ====== محول التاريخ ======
-    const toHijriOut = document.getElementById('toHijriOut');
-    const toGregOut = document.getElementById('toGregOut');
+    async function hToG(d,m,y){
+      const url = `https://api.aladhan.com/v1/hToG?date=${d}-${m}-${y}`;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('فشل الاتصال');
+      const data = await res.json();
+      if(!data || !data.data || !data.data.gregorian) throw new Error('رد غير متوقع');
+      const g = data.data.gregorian;
+      return { day:g.day, month:g.month.number, year:g.year, weekday:g.weekday.en };
+    }
 
     document.getElementById('toHijriBtn').addEventListener('click', async ()=>{
       const val = document.getElementById('gdate').value;
@@ -239,7 +267,7 @@
         toHijriOut.innerHTML = `<span class="success">التاريخ الهجري: ${h.day} / ${h.month} / ${h.year} — ${h.weekday}</span>`;
       }catch(e){
         toHijriOut.classList.remove('loading');
-        toHijriOut.innerHTML = '<span class="error">حدث خطأ أثناء التحويل.</span>';
+        toHijriOut.innerHTML = '<span class="error">حدث خطأ أثناء التحويل. تحققي من الاتصال.</span>';
       }
     });
 
@@ -253,47 +281,51 @@
       try{
         toGregOut.textContent = '... جاري التحويل';
         toGregOut.classList.add('loading');
-        const res = await fetch(`https://api.aladhan.com/v1/hToG?date=${d}-${m}-${y}`);
-        const data = await res.json();
-        const g = data.data.gregorian;
+        const g = await hToG(d,m,y);
         toGregOut.classList.remove('loading');
-        toGregOut.innerHTML = `<span class="success">التاريخ الميلادي: ${g.day} / ${g.month.number} / ${g.year} — ${g.weekday.en}</span>`;
+        toGregOut.innerHTML = `<span class="success">التاريخ الميلادي: ${g.day} / ${g.month} / ${g.year} — ${g.weekday}</span>`;
       }catch(e){
         toGregOut.classList.remove('loading');
-        toGregOut.innerHTML = '<span class="error">حدث خطأ أثناء التحويل.</span>';
+        toGregOut.innerHTML = '<span class="error">حدث خطأ أثناء التحويل. تحققي من الاتصال.</span>';
       }
     });
 
-    // ====== محول العملات ======
+    // ====== 3) محول العملات (exchangerate.host) ======
     const fxOut = document.getElementById('fxOut');
     async function convertFX(amount, from, to){
+      // استخدام endpoint تحويل مباشر (دقيق + بدون مفتاح)
       const url = `https://api.exchangerate.host/convert?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}&amount=${encodeURIComponent(amount)}`;
       const res = await fetch(url);
+      if(!res.ok) throw new Error('فشل الاتصال');
       const data = await res.json();
-      return {result:data.result};
+      if(!data || typeof data.result !== 'number') throw new Error('رد غير متوقع');
+      return { result: data.result, info: data.info };
     }
 
     document.getElementById('convert').addEventListener('click', async ()=>{
       const amount = parseFloat(document.getElementById('amount').value);
       const from = document.getElementById('from').value;
       const to = document.getElementById('to').value;
-      if(isNaN(amount) || amount <=0){ fxOut.innerHTML='<span class="error">أدخلي مبلغ صالح أكبر من 0.</span>'; return; }
+
+      if(isNaN(amount) || amount <= 0){
+        fxOut.innerHTML = '<span class="error">أدخلي مبلغاً صالحاً أكبر من 0.</span>'; return;
+      }
       try{
-        fxOut.textContent='... جاري التحويل';
+        fxOut.textContent = '... جاري التحويل';
         fxOut.classList.add('loading');
         const {result} = await convertFX(amount, from, to);
         fxOut.classList.remove('loading');
-        fxOut.innerHTML=`<span class="success">${amount} ${from} = ${result.toFixed(4)} ${to}</span>`;
+        fxOut.innerHTML = `<span class="success">${amount} ${from} = ${result.toFixed(4)} ${to}</span>`;
       }catch(e){
         fxOut.classList.remove('loading');
-        fxOut.innerHTML='<span class="error">تعذر جلب السعر.</span>';
+        fxOut.innerHTML = '<span class="error">تعذر جلب السعر. تحققي من الاتصال ثم أعيدي المحاولة.</span>';
       }
     });
 
     document.getElementById('swap').addEventListener('click', ()=>{
-      const from=document.getElementById('from');
-      const to=document.getElementById('to');
-      [from.value,to.value]=[to.value,from.value];
+      const from = document.getElementById('from');
+      const to = document.getElementById('to');
+      const temp = from.value; from.value = to.value; to.value = temp;
     });
   </script>
 </body>
